@@ -129,8 +129,6 @@ void runGameOfLife() {
 
             neighbors = countNeighbors(c,r);
           
-            // reset gridBack
-            gridBack[c][r] = 0;
            
             // Any live cell... 
             if (grid[c][r]) {
@@ -156,7 +154,7 @@ void runGameOfLife() {
         }
     }
 
-    copyMatrix(numRows, numCols, gridBack, grid);
+    copyMatrix(numCols, numRows, gridBack, grid);
 
     glutPostRedisplay();
 }
